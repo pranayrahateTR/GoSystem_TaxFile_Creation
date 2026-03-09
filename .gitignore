@@ -1,0 +1,32 @@
+# Virtual Environment
+.venv/
+venv/
+env/
+
+# Python cache
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Pytest cache
+.pytest_cache/
+
+# Allure results (generated)
+allure-results/
+
+# Logs (generated)
+logs/
+
+# Screenshots (generated)
+screenshot/
+
+# Credentials - exclude sensitive files, keep the folder and sample files
+exceldata/testdata.xlsx
+exceldata/ReturnDetails.xlsx
+
+# IDE
+.idea/
+.vscode/
+
+# Claude AI files
+.claude/
