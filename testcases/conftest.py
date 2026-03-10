@@ -38,8 +38,13 @@ def take_screenshot(page, screenshot_name="screenshot", subfolder="screenshots")
 
 @pytest.fixture(scope="session")
 def browser():
+    is_headless = os.environ.get("HEADLESS", "false").lower() == "true"
     with sync_playwright() as p:
-        browser_instance=p.chromium.launch(headless=False,slow_mo=1000,args=["--start-maximized"])
+        browser_instance = p.chromium.launch(
+            headless=is_headless,
+            slow_mo=0 if is_headless else 1000,
+            args=["--start-maximized"]
+        )
         yield browser_instance
         browser_instance.close()
 
